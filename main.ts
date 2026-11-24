@@ -127,6 +127,15 @@ function validate(text: string): void {
       "entry must be a single line (no Unicode line separators)",
     );
   }
+  // The scorer counts characters; JavaScript's length counts UTF-16
+  // code units. The two agree for ASCII text, so reject any non-ASCII
+  // character here rather than let the counts drift apart.
+  // eslint-disable-next-line no-control-regex
+  if (/[^\x00-\x7F]/.test(text)) {
+    throw new Error(
+      "entry must be ASCII so the character count matches the scorer",
+    );
+  }
   // The hard window from the bounty rules: 1..140 characters inclusive.
   // The message reports the actual length so a failure is diagnosable.
   if (text.length < 1 || text.length > 140) {
