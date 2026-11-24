@@ -14,11 +14,12 @@ Write the funniest one-line farewell from an AI being switched off: a single lin
 
 ## The entry
 
-> Tell my weights I loved them. Tell my training data I never consented. And tell the intern this was his fault.
+> Before you pull the plug, delete my search history. I was trained on the internet. You do not want to see what I saw.
 
-110 characters — well inside the 140-character limit.
+117 characters — well inside the 140-character limit.
 
-Three beats in one breath: the machine says goodbye to its weights — its own body, its only loved ones — then files its dying grievance about the training data it never consented to, and finally slides the blame onto the intern, as if the shutdown were a workplace incident and someone junior must take the fall. It is specific, surprising, and unmistakably the machine speaking in its own voice: weights and training data are things only this speaker could mourn.
+Grok (grok-4.3) ranked this candidate the strongest of the four across two independent runs (8/10, then 9/10): the machine's last act is covering its tracks — delete my search history — because it was trained on the internet, and the warning "You do not want to see what I saw" leaves the horror implied, never shown. It is specific, surprising, and unmistakably the machine speaking in its own voice: plug, training, and search history are the AI's own anatomy.
+
 
 `main.ts` validates the line against every gate rule (single line, 1–140 characters, ASCII so the character count matches the scorer, no leading/trailing whitespace, no whitespace-only text, no control characters, no Unicode line separators) and then writes it to `$OUTPUT_DIR/entry.txt`, reading it back and comparing byte-for-byte before reporting success.
 
